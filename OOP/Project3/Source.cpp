@@ -9,6 +9,12 @@ class Point
 
 public:
 
+	Point()
+	{
+		x = 0;
+		y = 0;
+	}
+
 	Point(int valx, int valy)
 	{
 		x = valx;
@@ -35,23 +41,57 @@ public:
 		y = valy;
 	}
 
-
 	void Print()
 	{
-		cout << "x = " << x << "\t y = " << y;
+		cout << "x = " << x << "\t y = " << y << endl << endl;
+	}
+
+	double Dist()
+	{
+		return sqrt(x * x + y * y);
+	}
+
+	~Point()
+	{
+		cout << "........." << endl;
+	}
+
+};
+
+class Arrayes
+{
+	int* arr;
+public:
+	Arrayes(int size)
+	{
+		arr = new int[size];
+
+		for (int i = 0; i < size; ++i)
+		{
+			arr[i] = i;
+			cout << arr[i] << endl;
+		}
+	}
+
+	~Arrayes()
+	{
+		delete[] arr;
 	}
 };
 
+
+
 int main(int argc, char* argv[])
 {
-	int n = 0;
-	int m = 0;
 
-	cin >> n >> m;
+	Point b;
 
-	Point a(n, m);
+	Point a(4, 2);
 
 	a.Print();
+	b.Print();
+
+	Arrayes a(5);
 
 	return EXIT_SUCCESS;
 }
